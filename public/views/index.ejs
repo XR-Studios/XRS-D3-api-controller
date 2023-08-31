@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3 api timeline controller</title>
+		<meta name="viewport" 
+		content="width=device-width, 
+		initial-scale=1.0, 
+		user-scalable=no" />
+		<link rel="stylesheet" href="/css/styles.css">
+		<link rel="icon" href="/img/favicon.ico" type="imgage/x-icon">
+    </head>
+    <body>
+        <header>
+            <h1>D3 api timeline controller</h1>
+            <h2 id="projectName"></h2>
+            <div class="inputs">
+                <div>
+                    <label for="url">D3 Director IP</label>
+                    <input type="text" name="url" id="url" value="127.0.0.1">
+                    <input type="button" name="refresh" id="refresh" value="Refresh">
+                </div>
+                <div>
+                    <label for="Search">Search:</label>
+                    <input type="text" name="Search" id="Search" value="">
+                </div>
+            </div>
+        </header>
+        <section>
+            <h2 class="transport">Transports</h2>
+            <div class="flexbar">
+                <div class="transports"></div>
+                <div class="filterToggle"><img src="../img/filter.svg" alt="Filter Annotations"></div>
+            </div>
+            <h3 class="filters hidden">Filters:</h3>
+            <div class="filters hidden">
+                <div class="filter enabled" id="SectionsFilter">Sections</div>
+                <div class="filter enabled" id="NotesFilter">Notes</div>
+                <div class="filter enabled" id="CueFilter">Cues</div>
+                <div class="filter enabled" id="TCFilter">TC</div>
+                <div class="filter enabled" id="MIDIFilter">MIDI</div>
+            </div>
+            <h2 class="transport">Annotations</h2>
+        </section>
+        <section class="buttons">
+            <div class="cues"></div>
+            <div class="transControl">
+                <select name="transportsDropdown" id="transportsDropdown">
+                </select>
+                <div class="controls">
+                    <div class="transButton" id="play"><img src="../img/play.svg" alt="Play Through Sections"></div>
+                    <div class="transButton" id="playEOS"><img src="../img/play_eos.svg" alt="Play to End of Section"></div>
+                    <div class="transButton" id="playLoop"><img src="../img/play_loop.svg" alt="Loop Section"></div>
+                    <div class="transButton" id="stop"><img src="../img/stop.svg" alt="Stop Playing"></div>
+                    <div class="transButton" id="prev"><img src="../img/prev.svg" alt="Previous Section"></div>
+                    <div class="transButton" id="next"><img src="../img/next.svg" alt="Next Section"></div>
+                    <div class="transButton" id="return"><img src="../img/return.svg" alt="Return to start of track"></div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="/js/main.js"></script>
+</html>

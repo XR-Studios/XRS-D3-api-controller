@@ -1,0 +1,253 @@
+body {
+	background-color: #111;
+	color: white;
+	font-family: sans-serif;
+	width: 900px;
+	padding: 2vw;
+	margin: 0 auto;
+}
+
+div.timeBtn {
+	background-color: #262626;
+	width: 100%;
+	margin: 16px 0;
+	display: flex;
+	cursor: pointer;
+}
+header{
+	position: sticky;
+	top:0;
+	background-color: #111;
+	padding: 8px 0 16px 0;
+}
+
+#refresh{
+    background: #0085ff;
+    border: none;
+	padding: 2px 8px;
+	cursor: pointer;
+}
+
+
+div.timeBtn h3,
+div.timeBtn h4,
+div.timeBtn p {
+	margin: 0;
+}
+
+div.top,
+div.bottom {
+	display: flex;
+}
+.cont {
+	flex-grow: 59;
+}
+.tagColor {
+	flex-grow: 1;
+	background-color: #c9c9c9;
+}
+.tagColor.CUE {
+	background-color: #0085ff;
+}
+.tagColor.TC {
+	background-color: #f04410;
+}
+.tagColor.MIDI {
+	background-color: #48a81b;
+}
+.note {
+	font-weight: 100;
+	text-align: right;
+	width: calc(20% - 16px);
+	padding: 8px;
+}
+.tag {
+	width: calc(70% - 16px);
+	padding: 8px;
+	color: #c9c9c9;
+	font-weight: 400;
+}
+.section {
+	text-align: right;
+	width: calc(20% - 16px);
+	padding: 8px;
+}
+.time {
+	width: calc(80% - 16px);
+	padding: 8px;
+	color: #c9c9c9;
+	font-weight: 400;
+}
+
+.flexbar{
+	display: flex;
+	justify-content: space-between;
+}
+
+.filterToggle{
+	width:30px;
+	cursor: pointer;
+}
+
+input{
+	border-radius: 7px;
+    border-style: solid;
+    color: #fff;
+    background-color: #262626;
+    border-color: #262626;
+}
+
+.inputs{
+	display: flex;
+	justify-content: space-between;
+}
+
+section.buttons {
+	width: 100%;
+	display: flex;
+}
+
+div.cues {
+	width: 85%;
+}
+
+div.transControl {
+	width: calc(15% - 2em);
+	align-self: flex-start;
+	height: auto;
+	padding: 2em;
+	position: sticky;
+	top: 160px;
+}
+
+div.transControl select{
+	color: #fff;
+    background-color: #232323;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+	width: 100%;
+	cursor: pointer;
+}
+
+div.transControl .controls .transButton{
+	width: 2em;
+	padding: 1em;
+	margin: 1em auto;
+	cursor: pointer;
+}
+
+.transports, .filters{
+	display: flex;
+}
+
+.transportName {
+	width: calc(10% - 16px);
+	padding: 8px;
+	color: #c9c9c9;
+	font-weight: 400;
+}
+
+.transports div, .filter{
+	color:#fff;
+	border-radius: 7px;
+    border-style: solid;	
+	margin: 0 1em 1em 0;
+	padding: 4px;
+	cursor: pointer;
+}
+
+.enabled{
+	border-color: #0085ff;
+	background-color: #0085ff;
+}
+
+.disabled{
+	border-color: #262626;
+	background-color: #262626;
+}
+
+@media (max-width: 900px) {
+	body {
+		width: calc(100% - 4vw);
+	}
+	section.buttons {
+		width: 100%;
+	}
+	.note,
+	.section {
+		width: calc(30% - 16px);
+	}
+	.time,
+	.tag {
+		width: calc(60% - 16px);
+	}
+}
+@media (max-width: 606px){
+	#url{
+		width: 98px;
+	}
+	div.inputs div{
+		padding: 8px 0;
+	}
+	.note,
+	.section {
+		width: calc(40% - 16px);
+	}
+	.time,
+	.tag {
+		width: calc(45% - 16px);
+	}
+	.transportName {
+		width: calc(25% - 16px);
+	}
+}
+@media (max-width: 500px) {
+	section.buttons {
+		width: 100%;
+	}
+	header{
+		position: relative;
+	}
+	.inputs{
+		display: block;
+	}
+	.note,
+	.section {
+		width: calc(40% - 16px);
+	}
+	.time,
+	.tag {
+		width: calc(45% - 16px);
+	}
+	.tagColor {
+		flex-grow: 2;
+	}
+	section.buttons {
+		width: 100%;
+		display: block;
+	}
+	div.cues {
+		width: 100%;
+		padding: 0 0 20vh 0;
+	}
+	div.transControl {
+		width: calc(100% - 2em);
+    	height: auto;
+    	padding: 1em;
+    	position: fixed;
+    	bottom: 0;
+    	left: 0;
+    	background: #111;
+    	top: unset;
+	}div.transControl .controls{
+		display: flex;
+	}div.transControl .controls .transButton{
+		padding: 1em;
+	}
+}
+
+
+.hidden{
+	display: none;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "d3-api-timeline-controller",
+  "version": "1.0.5",
+  "description": "Basic control of any active d3 timeline from r23 on using the new d3 api",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "Nate Wilkens",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
