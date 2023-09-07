@@ -1,7 +1,7 @@
 {
   "name": "d3-api-timeline-controller",
-  "version": "1.0.5",
-  "description": "Basic control of any active d3 timeline from r23 on using the new d3 api",
+  "version": "1.0.0",
+  "description": "Basic control of any active d3 timeline from r25 on using the new d3 api",
   "main": "app.js",
   "type": "module",
   "scripts": {

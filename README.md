@@ -1,4 +1,6 @@
-# d3 api timeline controller
+# Created At XR Studios
+
+## d3 api timeline controller
  An auto generated cuestack from Disguise's new api in [r25.0.3](https://www.disguise.one/download/)
 
  ## THIS REQUIRES R25 OR NEWER TO FUNCTION
@@ -9,6 +11,6 @@
 
 Get Nodejs installed on your computer from [Node JS](https://nodejs.org/en) (LTS is fine), Clone this repo, navigate to the project directory, run *npm install* then *npm start* in your terminal. Voila, your server should now be running [here](http://localhost:3000)
 
-## Todo
-Write a better install guide  
-Allow control of all transports with an all option in the dropdown menu.
+## Rights
+
+XR Studios gives you the right to use this, but not to distribute or sell this program. XR Studios also does not provide this software with any warranty and accepts no liability for your use of the program. XR Studios reserves all rights to this software.
