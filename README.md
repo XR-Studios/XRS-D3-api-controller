@@ -3,6 +3,8 @@
 ## d3 api timeline controller
  An auto generated cuestack from Disguise's new api in [r25.0.3](https://www.disguise.one/download/)
 
+![image](https://github.com/XR-Studios/XRS-D3-api-controller/assets/19474391/a4ccd00d-8703-432d-8c68-6aeec2100e0c)
+
  ## THIS REQUIRES R25 OR NEWER TO FUNCTION
 
  This software is a nodejs server that queries the d3 server with a running project and constructs a cuelist based on the time of each notation. You can search the stack and filter by track. Clicking on an annotation tells the d3 server to jump to the specified time. By default this opens a server at port 3000 on the device its run on and can be accessed with any connected network interface.
