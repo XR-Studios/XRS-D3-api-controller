@@ -1,7 +1,8 @@
 # XRS - d3 api timeline controller
  An auto generated cuestack from Disguise's new api in [r25.0.3](https://www.disguise.one/download/)
 
-![image](https://github.com/XR-Studios/XRS-D3-api-controller/assets/19474391/12ed0a21-9ffb-44ef-a61f-dbedb78f3f6d)
+![image](https://github.com/XR-Studios/XRS-D3-api-controller/assets/19474391/6478a72f-698c-48cc-a9c0-06017b7f9ce9)
+
 
 
  ## THIS REQUIRES R25 OR NEWER TO FUNCTION
