@@ -1,5 +1,5 @@
 let url = "0.0.0.0"; //d3 server address pulled and set from data 
-let transports;
+let transports = [];
 let port = 3000;
 let StoredDataByTime = [];
 let show;
@@ -15,7 +15,6 @@ async function getTransports(){
     title = await fetchAsync("http://" + url + "/api/session/status/project");
     data = await fetchAsync("http://" + url + "/api/session/transport/activetransport");
     console.log(data);
-    let transports = [];
     for(res of data.result){
         const transport = {
             type: "",
@@ -26,7 +25,6 @@ async function getTransports(){
                 name: ""
             },
             uid: "",
-            enabled:true
         }
         transport.type = "transport";
         transport.name = res.name;
@@ -35,7 +33,13 @@ async function getTransports(){
         transport.track.name = res.currentTrack.name;
         transport.uid = res.uid;
         console.log(transport)
-        transports.push(transport)
+        tindex = transports.findIndex(t => t.uid == transport.uid)
+        if(tindex != -1){
+            Object.assign(transports[tindex], transport)
+        }else{
+            transport.enabled = true
+            transports.push(transport)
+        }
     }
     document.querySelector('#projectName').innerHTML = title.result.projectPath.split('\\')[0]
     buildNotations(transports);
@@ -126,8 +130,8 @@ async function buildNotations(transports){
         const data = await fetchAsync("http://" + url + `/api/session/transport/annotations?uid=${transport.track.uid}`);
         //console.log(data)
         const dataByTime = buildDataByTime(data, transport.uid, transport.name);
-        renderDataByTime(dataByTime);
         StoredDataByTime.push(...dataByTime)
+        renderDataByTime(filterData());
     }
 
 }
@@ -413,7 +417,7 @@ document.addEventListener('click', (event) =>{
         event.target.classList.toggle('enabled')
         event.target.classList.toggle('disabled')
         document.querySelector('.buttons .cues').innerHTML = ''
-        renderDataByTime(StoredDataByTime);
+        renderDataByTime(filterData());
     }else if(event.target.matches('.filterToggle img') || event.target.matches('.filterToggle')){
         document.querySelectorAll('.filters')[0].classList.toggle('hidden')
         document.querySelectorAll('.filters')[1].classList.toggle('hidden')
@@ -438,8 +442,7 @@ document.addEventListener('click', (event) =>{
         }
         console.log(filters)
         document.querySelector('.buttons .cues').innerHTML = ''
-        const filteredDataByTime = filterData();
-        renderDataByTime(filteredDataByTime);
+        renderDataByTime(filterData());
         //update and rerun render date by time excluding whatever doesn't match current filter
     }else if(event.target.matches(".timeBtn")){
         const messagePre = {
