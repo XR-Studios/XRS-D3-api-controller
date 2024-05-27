@@ -1,6 +1,6 @@
 let url = "0.0.0.0"; //d3 server address pulled and set from data 
 let transports = [];
-let port = 3000;
+let port = 3002;
 let StoredDataByTime = [];
 let show;
 const filters = {
@@ -37,7 +37,6 @@ async function getTransports(){
         if(tindex != -1){
             Object.assign(transports[tindex], transport)
         }else{
-            transport.enabled = true
             transports.push(transport)
         }
     }
@@ -130,11 +129,12 @@ async function buildNotations(transports){
         const data = await fetchAsync("http://" + url + `/api/session/transport/annotations?uid=${transport.track.uid}`);
         //console.log(data)
         const dataByTime = buildDataByTime(data, transport.uid, transport.name);
-        StoredDataByTime.push(...dataByTime)
         renderDataByTime(filterData());
+        StoredDataByTime.push(...dataByTime)
     }
 
 }
+
 function setEnableState(state, transportUID){
     transports.forEach(transport => {
         if(transport.uid === transportUID){
@@ -142,7 +142,6 @@ function setEnableState(state, transportUID){
         }
     });
     console.log(transports)
-
 }
 function isEnabled(transportUID){
     isTrue = false;
@@ -442,7 +441,8 @@ document.addEventListener('click', (event) =>{
         }
         console.log(filters)
         document.querySelector('.buttons .cues').innerHTML = ''
-        renderDataByTime(filterData());
+        const filteredDataByTime = filterData();
+        renderDataByTime(filteredDataByTime);
         //update and rerun render date by time excluding whatever doesn't match current filter
     }else if(event.target.matches(".timeBtn")){
         const messagePre = {
